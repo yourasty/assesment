@@ -9,13 +9,24 @@ function App() {
   const commentsLoaded = useSelector((state) => state.comments.loaded);
   const commentsErr = useSelector((state) => state.comments.error);
 
-    return (
-      <div>
-        {usersLoaded ? <Users /> : usersErr ? <div>"error loading users"</div> : <div>"loading users..."</div>}
-        {commentsLoaded ? <Comments /> : commentsErr ? <div>"error loading comments"</div> : <div>"loading comments..."</div>}
-      </div>
-
-    );
+  return (
+    <div>
+      {usersLoaded ? (
+        <Users />
+      ) : usersErr ? (
+        <div>"error loading users"</div>
+      ) : (
+        <div>"loading users..."</div>
+      )}
+      {commentsLoaded ? (
+        <Comments />
+      ) : commentsErr ? (
+        <div>"error loading comments"</div>
+      ) : (
+        <div>"loading comments..."</div>
+      )}
+    </div>
+  );
 }
 
 export default App;

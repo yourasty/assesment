@@ -25,7 +25,6 @@ const composeEnhancers =
 const enhancer = composeEnhancers(applyMiddleware(createPromise(), thunk));
 const store = createStore(reducers, enhancer);
 
-
 store.dispatch(getUsers());
 store.dispatch(getComments());
 
